@@ -1,0 +1,10 @@
+.nav{
+  width: 50%;
+  height: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display:inline-flexbox
+  box-sizing: border-box;
+}
+
+}
