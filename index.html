@@ -4,52 +4,67 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <title>jwdfinalprojetc!</title>
+
+    <link rel="stylesheet"  href="./css/style.css">
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light">
-      <div class="container-fluid">
-        <form class="d-flex">
-          <form name="Add Task">
-     <label for="name" class="form-label">Name:</label><br>
-    <input type="text" class="form-control" id="name" required>
-  </div><br>
-  <div class="col-md-6">
-    <label for="description" class="form-label">Description:</label>
-    <textarea id="description" name="description" rows="3" cols="30"></textarea>
-  </div><br>
-  <div class="col-12">
-    <label for="assign" class="form-label">Assigned To:</label>
-    <input type="text" class="form-control" id="assign" required>
-  </div><br>
-   <div class="col-md-4">
-    <label for="inputState" class="form-label">Status</label>
-    <select id="inputState" class="form-select">
-      <option value="todo">To do</option>
-      <option value="review">Review</option>
-      <option value="inprogress">In progress</option>
-      <option value="done">Done</option>
-    </select>
-  </div>
-  <div class="col-md-2">
-    <label for="date" class="form-label">Due Date:</label>
-    <input type="date" class="form-control" id="date">
-  </div>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Submit</button>
-    <button type="submit" class="btn btn-primary">Reset</button>
-  </div>
-</form>
-</nav>
-<br>
+   <!----> 
+   <div class="container-fluid">
+<!---->
+    <!--Form information starts here-->
+    <section class="d-flex flex-column mx-auto col-6">
+      <form name="Add Task" id="form">
 
+        <div class="col-6">    
+          <label for="name" class="form-label">Name:</label>
+          <input type="text" class="form-control" id="name" required>
+        </div><br>
+
+        <div class="col-6">
+          <label for="description" class="form-label">Description:</label>
+          <textarea id="description" name="description" rows="3" cols="30"></textarea>
+        </div><br>
+
+        <div class="col-6">
+          <label for="assign" class="form-label">Assigned To:</label>
+          <input type="text" class="form-control" id="assign" required>
+        </div><br>
+
+        <div class="col-6">
+          <label for="inputState" class="form-label">Status</label>
+          <select id="inputState" class="form-select">
+            <option value="todo">To do</option>
+            <option value="review">Review</option>
+            <option value="inprogress">In progress</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+
+        <div class="col-6">
+          <label for="date" class="form-label">Due Date:</label>
+          <input type="date" class="form-control" id="date">
+        </div>
+
+        <div class="col-6">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary">Reset</button>
+        </div>
+
+        </form>
+      </section>
+    
+  <!--Forminformation ends here-->
 
         <!--Cards information-->
-        <div class="card" style="width: 18rem;">
+    <section class="d-flex flex-wrap justify-content-center">
+                    
+    <!--First card starts here-->
+        <div class="col">
+          <div class="card" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-name">Name</h5>
               <p class="card-text">Coding</p>
@@ -57,48 +72,111 @@
               <p class="card-text">Make use of course content.</p>
               <h5 class="card-name">Assigned to:</h5>
               <p class="card-text">Patience</p>
+              <h5 class="card-status">Status:</h5>
+              <p class="card-text">Done</p>
               <h5 class="card-name">Due Date:</h5>
               <p class="Date">mm/dd/year</p>
               <a href="#" class="btn btn-primary">Edit</a>
               <a href="#" class="btn btn-primary">delete</a>
             </div>
-              </div><br>
+          </div>
+        </div>
+               <!--second card ends here-->
 
-              <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-name">Name</h5>
-                  <p class="card-text">Task layout</p>
+              <!--second card starts here-->
+        <div class="col" >
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-name">Name</h5>
+              <p class="card-text">Task layout</p>
                   <h5 class="card-name">Description</h5>
                   <p class="card-text">Make use of course content.</p>
                   <h5 class="card-name">Assigned to:</h5>
                   <p class="card-text">Gyanu</p>
+                  <h5 class="card-status">Status:</h5>
+              <p class="card-text">Done</p>
                   <h5 class="card-name">Due Date:</h5>
                   <p class="Date">mm/dd/year</p>
                   <a href="#" class="btn btn-primary">Edit</a>
                   <a href="#" class="btn btn-primary">delete</a>
-                </div><br>
+            </div>
+          </div>
+        </div>
+                 <!--second card ends here-->
 
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-name">Name</h5>
-              <p class="card-text">Testing</p>
+
+                  <!--second card starts here-->
+        <div class="col" >
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-name">Name</h5>
+            <p class="card-text">Testing</p>
               <h5 class="card-name">Description</h5>
               <p class="card-text">Make use of course content.</p>
               <h5 class="card-name">Assigned to:</h5>
-              <p class="card-text">Patience</p>
+              <p class="card-name">Patience</p>
+              <h5 class="card-status">Status:</h5>
+              <p class="card-text">Done</p>
+              <h5 class="card-status">Status:</h5>
+              <p class="card-text">Done</p>
               <h5 class="card-name">Due Date:</h5>
               <p class="Date">mm/dd/year</p>
               <a href="#" class="btn btn-primary">Edit</a>
               <a href="#" class="btn btn-primary">delete</a>
-            </div><br>
-  
+            </div>
+          </div>
+        </div>
+              <!--second card starts here-->
 
+
+               <!--third card starts here-->
+          <div class="col" >
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-name">Name</h5>
+                <p class="card-text">Testing</p>
+                <h5 class="card-name">Description</h5>
+                <p class="card-text">Make use of course content.</p>
+                <h5 class="card-name">Assigned to:</h5>
+                <p class="card-text">Patience</p>
+                <h5 class="card-status">Status:</h5>
+              <p class="card-text">In Progress</p>
+                <h5 class="card-name">Due Date:</h5>
+                <p class="Date">mm/dd/year</p>
+                <a href="#" class="btn btn-primary">Edit</a>
+                <a href="#" class="btn btn-primary">delete</a>
+              </div>
+            </div>
+          </div>
+              <!--third card starts here-->
+
+              <!--fourth card starts here-->
+          <div class="col" >
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                  <h5 class="card-name">Name</h5>
+                  <p class="card-text">Testing</p>
+                  <h5 class="card-name">Description</h5>
+                  <p class="card-text">Make use of course content.</p>
+                  <h5 class="card-name">Assigned to:</h5>
+                  <p class="card-text">Patience</p>
+                  <h5 class="card-name">Due Date:</h5>
+                  <p class="Date">mm/dd/year</p>
+                  <a href="#" class="btn btn-primary">Edit</a>
+                  <a href="#" class="btn btn-primary">delete</a>
+                </div>
+              </div>
+            </div>
+
+                <!--fourth card starts here-->
+         
+              </section>
+              <footer>Rights reserved. Copyright 2021 , by Gyanu & Patience</footer>
           
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
-      </body>
-      <footer>Rights reserved. Copyright 2021 , by Gyanu & Patience</footer>
+  </div>
+  </body>
 </html>
