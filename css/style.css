@@ -1,2 +1,29 @@
+#form {
+background-color: lightblue;
+border-radius: 30px;
+padding: 20px 30px;
+margin-top: 5%;
+margin-bottom: 5%;
+max-width: 500px;
+}
 
+p {
+    color: red;
+}
 
+.form-label {
+   margin-top: 2%;
+}
+
+.btn-primary {
+    margin-top: 5%;
+}
+
+.card {
+    background-color: lightblue;
+    border-radius: 30px;
+}
+
+footer {
+    margin-top: 3%;
+}
