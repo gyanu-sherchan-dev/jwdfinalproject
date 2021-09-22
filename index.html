@@ -11,17 +11,19 @@
 
     <link rel="stylesheet"  href="./css/style.css">
   </head>
+  
   <body>
+
    <!----> 
    <div class="container-fluid">
 <!---->
     <!--Form information starts here-->
     <section class="d-flex flex-column mx-auto col-lg-4 col-md-8 col-sm-12">
-      <form name="Add Task" id="form">
+      <form name="Add Task" id="addForm">
 
         <div class="col">    
           <label for="name" class="form-label">Name:</label>
-          <input type="text" class="form-control" id="name" required>
+          <input type="text" class="form-control" id="name">
         </div><br>
 
         <div class="col">
@@ -50,14 +52,14 @@
         </div>
 
         <div class="col">
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="submit" class="btn btn-primary">Reset</button>
+          <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+          <button type="submit" class="btn btn-primary" id="resetBtn">Reset</button>
         </div>
 
         </form>
       </section>
     
-  <!--Forminformation ends here-->
+  <!--Form information ends here-->
 
         <!--Cards information-->
     <section class="d-flex flex-wrap justify-content-center">
@@ -82,94 +84,6 @@
           </div>
         </div>
                <!--first card ends here-->
-
-              <!--second card starts here-->
-        <div class="col" >
-          <div class="mx-auto card" style="width: 14rem;">
-            <div class="card-body">
-              <h5 class="card-name">Name</h5>
-              <p class="card-text">Task layout</p>
-                  <h5 class="card-name">Description</h5>
-                  <p class="card-text">Make use of course content.</p>
-                  <h5 class="card-name">Assigned to:</h5>
-                  <p class="card-text">Gyanu</p>
-                  <h5 class="card-status">Status:</h5>
-              <p class="card-text">Done</p>
-                  <h5 class="card-name">Due Date:</h5>
-                  <p class="Date">mm/dd/year</p>
-                  <a href="#" class="btn btn-primary">Edit</a>
-                  <a href="#" class="btn btn-primary">delete</a>
-            </div>
-          </div>
-        </div>
-                 <!--second card ends here-->
-
-
-                  <!--third card starts here-->
-        <div class="col" >
-        <div class="mx-auto card" style="width: 14rem;">
-        <div class="card-body">
-          <h5 class="card-name">Name</h5>
-            <p class="card-text">Testing</p>
-              <h5 class="card-name">Description</h5>
-              <p class="card-text">Make use of course content.</p>
-              <h5 class="card-name">Assigned to:</h5>
-              <p class="card-name">Patience</p>
-              <h5 class="card-status">Status:</h5>
-              <p class="card-text">Done</p>
-              <h5 class="card-name">Due Date:</h5>
-              <p class="Date">mm/dd/year</p>
-              <a href="#" class="btn btn-primary">Edit</a>
-              <a href="#" class="btn btn-primary">delete</a>
-            </div>
-          </div>
-        </div>
-              <!--third card ends here-->
-
-
-               <!--fourth card starts here-->
-          <div class="col" >
-            <div class="mx-auto card" style="width: 14rem;">
-              <div class="card-body">
-                <h5 class="card-name">Name</h5>
-                <p class="card-text">Testing</p>
-                <h5 class="card-name">Description</h5>
-                <p class="card-text">Make use of course content.</p>
-                <h5 class="card-name">Assigned to:</h5>
-                <p class="card-text">Patience</p>
-                <h5 class="card-status">Status:</h5>
-              <p class="card-text">In Progress</p>
-                <h5 class="card-name">Due Date:</h5>
-                <p class="Date">mm/dd/year</p>
-                <a href="#" class="btn btn-primary">Edit</a>
-                <a href="#" class="btn btn-primary">delete</a>
-              </div>
-            </div>
-          </div>
-              <!--fourth card ends here-->
-
-              <!--fifth card starts here-->
-          <div class="col" >
-            <div class="mx-auto card" style="width: 14rem;">
-              <div class="card-body">
-                  <h5 class="card-name">Name</h5>
-                  <p class="card-text">Testing</p>
-                  <h5 class="card-name">Description</h5>
-                  <p class="card-text">Make use of course content.</p>
-                  <h5 class="card-name">Assigned to:</h5>
-                  <p class="card-text">Patience</p>
-                  <h5 class="card-status">Status:</h5>
-              <p class="card-text">In Progress</p>
-                  <h5 class="card-name">Due Date:</h5>
-                  <p class="Date">mm/dd/year</p>
-                  <a href="#" class="btn btn-primary">Edit</a>
-                  <a href="#" class="btn btn-primary">delete</a>
-                </div>
-              </div>
-            </div>
-
-                <!--fifth card ends here-->
-         
               </section>
               <footer>Rights reserved. Copyright 2021 , by Gyanu & Patience</footer>
           
@@ -178,5 +92,6 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
   </div>
+  <script src="test.js"></script>
   </body>
 </html>
