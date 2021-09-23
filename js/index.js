@@ -1,8 +1,10 @@
-//Selectors
+// TaskManager initialises
+const taskManager = new TaskManager(0);
+console.log(taskManager);
+
 const addForm = document.querySelector("#addForm");
 console.log(addForm);
 
-//Function
 addForm.addEventListener("submit", (edata) => {
     edata.preventDefault();
     console.log("insidevalidation");
@@ -77,7 +79,6 @@ if (assignedTo.value.length < 3) {
     dateErr.style.color = 'green';
     // valData++;
   }
-  
 
  
 // //   // ----------------------------------------------------------------------------------
