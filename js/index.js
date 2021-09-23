@@ -1,3 +1,12 @@
+const taskHtml = htmlTask(
+           names.value.innerHTML = "",
+         description.value.innerHTML = "",
+         assignedTo.value.innerHTML = "",
+         dueDate.value.innerHTML = "",
+         statusD.value.innerHTML = ""
+        ) 
+        console.log(taskHtml);
+
 // TaskManager initialises
 const taskManager = new TaskManager(0);
 // taskManager(addTask);
@@ -87,6 +96,7 @@ if (assignedTo.value.length < 3) {
     );
     // clearFormFields();
     document.getElementById("addForm").reset();
+    taskManager.render();
   }
 });
 
