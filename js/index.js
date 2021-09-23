@@ -1,5 +1,6 @@
 // TaskManager initialises
 const taskManager = new TaskManager(0);
+// taskManager(addTask);
 console.log(taskManager);
 
 const addForm = document.querySelector("#addForm");
@@ -18,7 +19,7 @@ addForm.addEventListener("submit", (edata) => {
   let assignErr = document.querySelector("#assignErr");
   let statusErr = document.querySelector("#statusErr");
   let dateErr = document.querySelector("#dateErr");
-//   let valData = 0;
+  let valData = 0;
 
   console.log("Name :" + names.value.length);
   console.log("Description :" + description.value.length);
@@ -33,7 +34,7 @@ addForm.addEventListener("submit", (edata) => {
   } else {
     nameError.innerHTML='all good';
     nameError.style.color = "green";
-    // valData++;
+    valData++;
 }
 
 
@@ -44,7 +45,7 @@ addForm.addEventListener("submit", (edata) => {
    } else {
      descripError.innerHTML='all good';
      descripError.style.color = "green";
-    //  valData++;
+     valData++;
  }
 
 
@@ -55,36 +56,37 @@ if (assignedTo.value.length < 3) {
   } else {
      assignErr.innerHTML = 'all good';
      assignErr.style.color = 'green';
-    //  valData++;
+     valData++;
    }
-
-  // Form validation for Task Status Field not empty
-  if (statusD.value === '' || statusD.value == null) {
-    statusErr.innerHTML = 'Please select status';
-    statusErr.style.color = 'red';
-  } else {
-    statusErr.innerHTML = 'all good';
-    statusErr.style.color = 'green';
-    // valData++;
-  }
 
   
   // Form validation for Due Date Field not empty
   // try your own validation for a date in the future
-  if (dueDate === " " || dueDate === null) {
+  // console.log(dueDate.value)
+  if (dueDate.value === "" || dueDate.value === null) {
     dateErr.innerHTML ="Enter a valid date";
     dateErr.style.color = 'red';
   } else {
     dateErr.innerHTML ="all good";
     dateErr.style.color = 'green';
-    // valData++;
+    valData++;
   }
 
  
 // //   // ----------------------------------------------------------------------------------
-//   if (valData > 0) {
-//     valData = 0;
-//     return;
-//   }
+  if (valData > 0) {
+    valData = 0;
+  } else {
+    // here add a new task
+    taskManager.addTask(
+      names.value,
+      description.value,
+      assignedTo.value,
+      dueDate.value,
+      statusD.value
+    );
+    // clearFormFields();
+    document.getElementById("addForm").reset();
+  }
 });
 
