@@ -32,13 +32,13 @@
           <textarea class="form-control" id="description" name="description" rows="3" cols="30"></textarea>
         </div><br>
 
-        <span id="assignErr">assignErr</span>
+        <span id="assignErr"></span>
         <div class="col">
           <label for="assign" class="form-label">Assigned To:</label>
           <input type="text" class="form-control" id="assign">
         </div><br>
 
-        <span id="statusErr">statusErr</span>
+        <span id="statusErr"></span>
         <div class="col">
           <label for="inputState" class="form-label">Status</label>
           <select id="inputState" class="form-select"  placeholder="select status">
@@ -49,7 +49,7 @@
           </select>
         </div>
 
-        <span id="dateErr">dateErr</span>
+        <span id="dateErr"></span>
         <div class="col">
           <label for="date" class="form-label">Due Date:</label>
           <input type="date" class="form-control" id="date" value="">
@@ -81,16 +81,19 @@
               <h5 class="card-status">Status:</h5>
               <p class="card-text">Done</p>
               <h5 class="card-name">Due Date:</h5>
-              <p class="Date">mm/dd/year</p>
+              <p class="Date">dd/mm/yyyy</p>
               <a href="#" class="btn btn-primary">Edit</a>
               <a href="#" class="btn btn-primary">delete</a>
             </div>
           </div>
-        </div>
-        <!--first card ends here-->
+               <!--first card ends here-->
         <!-- Task list -->
-       
-               
+            <div class="task-list-container">
+              <h3 class="text-center">Tasks:</h3>
+              <div class="d-flex justify-content-center">
+                <ul class="list-group" id="task-list"></ul>
+              </div>
+            </div> 
               </section>
               <footer>Rights reserved. Copyright 2021 , by Gyanu & Patience</footer>
           

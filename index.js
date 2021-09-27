@@ -16,7 +16,7 @@ addForm.addEventListener("submit", (edata) => {
   let assignErr = document.querySelector("#assignErr");
   let statusErr = document.querySelector("#statusErr");
   let dateErr = document.querySelector("#dateErr");
-//   let valData = 0;
+  let valData = 0;
 
   console.log("Name :" + names.value.length);
   console.log("Description :" + description.value.length);
@@ -31,7 +31,7 @@ addForm.addEventListener("submit", (edata) => {
   } else {
     nameError.innerHTML='all good';
     nameError.style.color = "green";
-    // valData++;
+    valData++;
 }
 
 
@@ -42,7 +42,7 @@ addForm.addEventListener("submit", (edata) => {
    } else {
      descripError.innerHTML='all good';
      descripError.style.color = "green";
-    //  valData++;
+     valData++;
  }
 
 
@@ -53,7 +53,7 @@ if (assignedTo.value.length < 3) {
   } else {
      assignErr.innerHTML = 'all good';
      assignErr.style.color = 'green';
-    //  valData++;
+     valData++;
    }
 
   // Form validation for Task Status Field not empty
@@ -63,7 +63,7 @@ if (assignedTo.value.length < 3) {
   } else {
     statusErr.innerHTML = 'all good';
     statusErr.style.color = 'green';
-    // valData++;
+    valData++;
   }
 
   
@@ -75,7 +75,7 @@ if (assignedTo.value.length < 3) {
   } else {
     dateErr.innerHTML ="all good";
     dateErr.style.color = 'green';
-    // valData++;
+    valData++;
   }
   
 

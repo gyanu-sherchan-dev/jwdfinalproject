@@ -1,18 +1,18 @@
 //Card function in html
-function htmlTask(names, description, assignedTo, dueDate, statusD) {
+function createTaskHtml (names, description, assignedTo, statusD, dueDate) {
   const html =`<div class="col">
   <div class="mx-auto card" style="width: 14rem;">
     <div class="card-body">
-      <h5 class="card-name">${names}</h5>
-      <p class="card-text">Coding</p>
-      <h5 class="card-name">${description}</h5>
-      <p class="card-text">Make use of course content.</p>
-      <h5 class="card-name">${assignedTo}:</h5>
-      <p class="card-text">Patience</p>
-      <h5 class="card-status">${statusD}:</h5>
-      <p class="card-text">Done</p>
-      <h5 class="card-name">${dueDate}:</h5>
-      <p class="Date">mm/dd/year</p>
+      <h5 class="card-name">Name:</h5>
+      <p class="card-text">${names}</p>
+      <h5 class="card-name">Description</h5>
+      <p class="card-text">${description}</p>
+      <h5 class="card-name">Assigned To:</h5>
+      <p class="card-text">${assignedTo}</p>
+      <h5 class="card-status">Status:</h5>
+      <p class="card-text">${statusD}</p>
+      <h5 class="card-name">DueDate:</h5>
+      <p class="Date">${dueDate}</p>
       <a href="#" class="btn btn-primary">Edit</a>
       <a href="#" class="btn btn-primary">delete</a>
     </div>
@@ -20,7 +20,6 @@ function htmlTask(names, description, assignedTo, dueDate, statusD) {
 </div>`
 
 return html;
-console.log(htmlTask);
 }
 
 
@@ -28,23 +27,23 @@ console.log(htmlTask);
 class TaskManager {
   constructor(currentId = 0) {
     this.tasks = [];
-    this.currentId = currentId;
-  }
+    this.currentId = currentId
+      }
 
-  //addTask method
+//   //addTask method
     addTask(names, description, assignedTo,statusD, dueDate) {
     
       const task = {
         // Incrementing the current Id for each new task
         id: this.currentId++,
-        name: names,
+        names: names,
         description: description,
         assignedTo: assignedTo,
+        statusD: statusD,
         dueDate: dueDate,
-        status: statusD,
       };
 
-      this.tasks.push({ task });
+      this.tasks.push(task);
   }
    // Render method
    render() {
@@ -57,14 +56,14 @@ class TaskManager {
       const date = new Date(task.dueDate);
       const formattedDate =
         date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-      // Task html
-      const taskHtml = htmlTask(
+      //Task html
+      const taskHtml = createTaskHtml(
         task.names,
         task.description,
         task.assignedTo,
+        task.statusD,
         task.formattedDate,
-        task.statusD
-      );
+        );
       // console.log(taskHtml);
       // Push it to the tasksHtmlList array
       tasksHtmlList.push(taskHtml);
@@ -77,10 +76,5 @@ class TaskManager {
     // Set the inner html of the tasksList on the page
     const tasksList = document.querySelector("#task-list");
     tasksList.innerHTML = tasksHtml;
-  }
 }
-
-
-
- 
-
+}

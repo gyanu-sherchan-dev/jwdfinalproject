@@ -1,19 +1,9 @@
-const taskHtml = htmlTask(
-           names.value.innerHTML = "",
-         description.value.innerHTML = "",
-         assignedTo.value.innerHTML = "",
-         dueDate.value.innerHTML = "",
-         statusD.value.innerHTML = ""
-        ) 
-        console.log(taskHtml);
-
 // TaskManager initialises
 const taskManager = new TaskManager(0);
-// taskManager(addTask);
-console.log(taskManager);
+// console.log(taskManager);
 
 const addForm = document.querySelector("#addForm");
-console.log(addForm);
+// console.log(addForm);
 
 addForm.addEventListener("submit", (edata) => {
     edata.preventDefault();
@@ -21,8 +11,8 @@ addForm.addEventListener("submit", (edata) => {
   let names = document.querySelector("#name");
   let description = document.querySelector("#description");
   let assignedTo = document.querySelector("#assign");
-  let dueDate = document.querySelector("#date");
   let statusD = document.querySelector("#inputState");
+  let dueDate = document.querySelector("#date");
   let nameError = document.querySelector("#nameError");
   let descripError = document.querySelector("#descripError");
   let assignErr = document.querySelector("#assignErr");
@@ -33,9 +23,9 @@ addForm.addEventListener("submit", (edata) => {
   console.log("Name :" + names.value.length);
   console.log("Description :" + description.value.length);
   console.log("Assigned To :" + assignedTo.value.length);
-  console.log("Due Date :" + dueDate.value);
   console.log("Status:" + statusD.value);
-
+  console.log("Due Date :" + dueDate.value);
+  
   // Form validation for Task Name Field min length 5
   if (names.value.length < 3) {
    nameError.innerHTML='Name must be longer than 3 characters';
@@ -60,7 +50,7 @@ addForm.addEventListener("submit", (edata) => {
 
 // Form validation for Task Assigned Field min length 5
 if (assignedTo.value.length < 3) {
-    assignErr.innerHTML = 'Task must be assigned';
+  assignErr.innerHTML = 'Task must be assigned';
     assignErr.style.color = 'red';
   } else {
      assignErr.innerHTML = 'all good';
@@ -81,22 +71,28 @@ if (assignedTo.value.length < 3) {
     valData++;
   }
 
- 
+ console.log(valData);
 // //   // ----------------------------------------------------------------------------------
   if (valData > 0) {
     valData = 0;
-  } else {
+    console.log("validation successful");
     // here add a new task
     taskManager.addTask(
       names.value,
       description.value,
       assignedTo.value,
+      statusD.value,
       dueDate.value,
-      statusD.value
     );
-    // clearFormFields();
+    // clear form fields();
     document.getElementById("addForm").reset();
-    taskManager.render();
-  }
-});
+    taskManager.render(); 
+      const taskHtml = window.createTaskHtml(names, description, assignedTo, statusD, dueDate);
+      console.log(taskHtml);
+
+      // // console.log(createTaskHtml);
+    
+    
+      }
+      });
 
