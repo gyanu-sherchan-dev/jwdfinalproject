@@ -45,6 +45,8 @@ class TaskManager {
 
       this.tasks.push(task);
   }
+
+
    // Render method
    render() {
     let tasksHtmlList = [];
@@ -61,7 +63,7 @@ class TaskManager {
         task.description,
         task.assignedTo,
         task.statusD,
-        task.formattedDate,
+        formattedDate,
         );
       console.log(taskHtml);
 
