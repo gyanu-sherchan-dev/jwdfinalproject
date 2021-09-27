@@ -30,12 +30,12 @@ class TaskManager {
     this.currentId = currentId
       }
 
-//   //addTask method
+//addTask method
     addTask(names, description, assignedTo,statusD, dueDate) {
     
       const task = {
-        // Incrementing the current Id for each new task
-        id: this.currentId++,
+        // Incrementing the currentId for each new task
+        currentId: this.currentId++,
         names: names,
         description: description,
         assignedTo: assignedTo,
@@ -50,8 +50,7 @@ class TaskManager {
     let tasksHtmlList = [];
     //html array store
     for (let i = 0; i < this.tasks.length; i++) {
-      // Get the current task in the loop
-  const task = this.tasks[i];
+        const task = this.tasks[i];
       // Format the date
       const date = new Date(task.dueDate);
       const formattedDate =
@@ -64,7 +63,8 @@ class TaskManager {
         task.statusD,
         task.formattedDate,
         );
-      // console.log(taskHtml);
+      console.log(taskHtml);
+
       // Push it to the tasksHtmlList array
       tasksHtmlList.push(taskHtml);
     }
@@ -73,7 +73,7 @@ class TaskManager {
     // with a new line in between each item.
     const tasksHtml = tasksHtmlList.join("\n");
 
-    // Set the inner html of the tasksList on the page
+    // Setting the innerHTML of the tasksList on the page
     const tasksList = document.querySelector("#task-list");
     tasksList.innerHTML = tasksHtml;
 }

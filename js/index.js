@@ -57,12 +57,10 @@ if (assignedTo.value.length < 3) {
      assignErr.style.color = 'green';
      valData++;
    }
-
-  
+   
   // Form validation for Due Date Field not empty
-  // try your own validation for a date in the future
-  // console.log(dueDate.value)
-  if (dueDate.value === "" || dueDate.value === null) {
+   // console.log(dueDate.value)
+  if (dueDate.value === "yyyy/mm/dd") {
     dateErr.innerHTML ="Enter a valid date";
     dateErr.style.color = 'red';
   } else {
@@ -71,7 +69,7 @@ if (assignedTo.value.length < 3) {
     valData++;
   }
 
- console.log(valData);
+//  console.log(valData);
 // //   // ----------------------------------------------------------------------------------
   if (valData > 0) {
     valData = 0;
@@ -87,12 +85,7 @@ if (assignedTo.value.length < 3) {
     // clear form fields();
     document.getElementById("addForm").reset();
     taskManager.render(); 
-      const taskHtml = window.createTaskHtml(names, description, assignedTo, statusD, dueDate);
-      console.log(taskHtml);
-
-      // // console.log(createTaskHtml);
-    
-    
-      }
+       
+          }
       });
 

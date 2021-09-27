@@ -45,7 +45,6 @@ addForm.addEventListener("submit", (edata) => {
      valData++;
  }
 
-
 // Form validation for Task Assigned Field min length 5
 if (assignedTo.value.length < 3) {
     assignErr.innerHTML = 'Task must be assigned';
@@ -68,8 +67,7 @@ if (assignedTo.value.length < 3) {
 
   
   // Form validation for Due Date Field not empty
-  // try your own validation for a date in the future
-  if (dueDate === " " || dueDate === null) {
+   if (dueDate.value === "dd/mm/yyyy") {
     dateErr.innerHTML ="Enter a valid date";
     dateErr.style.color = 'red';
   } else {
@@ -83,7 +81,7 @@ if (assignedTo.value.length < 3) {
 // //   // ----------------------------------------------------------------------------------
 //   if (valData > 0) {
 //     valData = 0;
-//     return;
+//     the do something
 //   }
 });
 
