@@ -89,3 +89,48 @@ if (assignedTo.value.length < 3) {
           }
       });
 
+
+let cardStats = document.querySelector("#task-list");
+// let done = document.getElementById("done");
+cardStats.addEventListener("click", myCard);
+
+function myCard(event) {
+// console.log("my card function");
+let myID = event.target.id;
+console.log("Testing myID", myID);
+const task = taskManager.getTaskById(myID);
+console.log(task);
+task.statusD = "Done";
+// Render the tasks
+taskManager.render();
+
+// console.log(myID.parentNode.parentNode.parentNode.parentNode.id);
+
+    // switch(stats) {
+    //   case 0: 
+    //   cardStats = 'To do';
+    //   break;
+    //   case 1:
+    //   cardStats = 'Being reviewed';
+    //   break;
+    //   case 2: 
+    //   cardStats = 'Still in progress';
+    //   break;
+    //   case 3: 
+    //   cardStats = 'done';
+    //   break;
+    //   default:
+    // } 
+    // if(cardStats.value === done.statusD.value) {
+    //   done.innerHTML = "done";
+    
+    // }
+}
+
+// var result = myCard(plum);
+//   const target = event.target;
+//   if(target.matches("click")) {
+//    target.innerText = "Done";
+//    target.background.color = "green"; 
+//   }
+//  let cardStats = done.value;

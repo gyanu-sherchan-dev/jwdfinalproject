@@ -41,7 +41,8 @@
         <span id="statusErr"></span>
         <div class="col">
           <label for="inputState" class="form-label">Status</label>
-          <select id="inputState" class="form-select"  placeholder="select status">
+          <select id="inputState" class="form-select">
+            <option value="">Select One …</option>
             <option value="todo">To do</option>
             <option value="review">Review</option>
             <option value="inprogress">In progress</option>
@@ -83,8 +84,8 @@
               <p class="card-text">Done</p>
               <h5 class="card-name">Due Date:</h5>
               <p class="Date">yyyy/mm/dd</p>
-              <a href="#" class="btn btn-primary">Edit</a>
-              <a href="#" class="btn btn-primary">delete</a>
+              <a href="#" class="btn btn-success" id="done">Mark as done</a>
+              <a href="#" class="btn btn-primary" id="delete">delete</a>
             </div>
            </div>
           </div>

@@ -1,6 +1,7 @@
 //Card function in html
-function createTaskHtml (names, description, assignedTo, statusD, dueDate) {
-  const html =`<div class="col">
+function createTaskHtml (currentId, names, description, assignedTo, statusD, dueDate) {
+  console.log(currentId);
+  const html =`<div class="col" id="${currentId}">
   <div class="mx-auto card" style="width: 14rem;">
     <div class="card-body">
       <h5 class="card-name">Name:</h5>
@@ -13,7 +14,7 @@ function createTaskHtml (names, description, assignedTo, statusD, dueDate) {
       <p class="card-text">${statusD}</p>
       <h5 class="card-name">DueDate:</h5>
       <p class="Date">${dueDate}</p>
-      <a href="#" class="btn btn-primary">Edit</a>
+      <a href="#" class="btn btn-success" id="${currentId}">Mark as Done</a>
       <a href="#" class="btn btn-primary">delete</a>
     </div>
   </div>
@@ -21,8 +22,7 @@ function createTaskHtml (names, description, assignedTo, statusD, dueDate) {
 
 return html;
 }
-
-
+ 
 //Task 5 - Creating a TaskManager
 class TaskManager {
   constructor(currentId = 0) {
@@ -35,7 +35,7 @@ class TaskManager {
     
       const task = {
         // Incrementing the currentId for each new task
-        currentId: this.currentId++,
+        id: this.currentId++,
         names: names,
         description: description,
         assignedTo: assignedTo,
@@ -44,6 +44,24 @@ class TaskManager {
       };
 
       this.tasks.push(task);
+  }
+  getTaskById(taskId) {
+    // Create a variable to store the found task
+    let foundTask;
+    // Loop over the tasks and find the task with the id passed as a parameter
+    for (let i = 0; i < this.tasks.length; i++) {
+      console.log(this.tasks[i].id);
+      console.log("task id", taskId);
+      // Get the current task in the loop
+      const task = this.tasks[i];
+      // Check if its the right task by comparing the task's id to the id passed as a parameter
+      if (task.id == taskId) {
+        // Store the task in the foundTask variable
+        foundTask = task;
+      }
+    }
+    // Return the found task
+    return foundTask;
   }
 
 
@@ -58,7 +76,9 @@ class TaskManager {
       const formattedDate =
         date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
       //Task html
+      console.log("render function");
       const taskHtml = createTaskHtml(
+        task.id,
         task.names,
         task.description,
         task.assignedTo,
@@ -80,3 +100,4 @@ class TaskManager {
     tasksList.innerHTML = tasksHtml;
 }
 }
+//document.getElementById("#task-list").style.counterIncrement;
