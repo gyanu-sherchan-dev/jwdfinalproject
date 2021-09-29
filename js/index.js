@@ -83,8 +83,8 @@ if (assignedTo.value.length < 5) {
 
 //  console.log(valData);
 // ----------------------------------------------------------------------------------
-  if (valData > 0) {
-    valData = 0;
+  if (valData >= 5) {
+      valData = 0;
     console.log("validation successful");
     // here add a new task
     taskManager.addTask(
@@ -94,8 +94,16 @@ if (assignedTo.value.length < 5) {
       statusD.value,
       dueDate.value,
     );
-    // clear form fields();
+    
     document.getElementById("addForm").reset();
+    
+    // clear form fields();
+    nameError.innerHTML = "";
+    descripError = "";
+    assignErr = "";
+    statusErr = "";
+    dateErr = "";
+    
     taskManager.render(); 
        
           }
