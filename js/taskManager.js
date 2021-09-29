@@ -14,7 +14,8 @@ function createTaskHtml (currentId, names, description, assignedTo, statusD, due
       <p class="card-text">${statusD}</p>
       <h5 class="card-name">DueDate:</h5>
       <p class="Date">${dueDate}</p>
-      <a href="#" class="btn btn-success" id="${currentId}">Mark as Done</a>
+      <a href="#" class="btn btn-success ${(statusD == "Done") ? "d-none" : ""}
+      " id="${currentId}">Mark as Done</a>
       <a href="#" class="btn btn-primary">delete</a>
     </div>
   </div>
