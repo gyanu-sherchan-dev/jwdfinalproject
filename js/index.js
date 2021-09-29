@@ -27,8 +27,8 @@ addForm.addEventListener("submit", (edata) => {
   console.log("Due Date :" + dueDate.value);
   
   // Form validation for Task Name Field min length 5
-  if (names.value.length < 3) {
-   nameError.innerHTML='Name must be longer than 3 characters';
+  if (names.value.length < 5) {
+   nameError.innerHTML='Name must be longer than 5 characters';
    nameError.style.color = "red";
   } else {
     nameError.innerHTML='all good';
@@ -38,8 +38,8 @@ addForm.addEventListener("submit", (edata) => {
 
 
   // Form validation for Task Description Field min length 5
-  if (description.value.length < 3) {
-    descripError.innerHTML='Description must be longer than 3 characters';
+  if (description.value.length < 5) {
+    descripError.innerHTML='Description must be longer than 5 characters';
     descripError.style.color = "red";
    } else {
      descripError.innerHTML='all good';
@@ -49,7 +49,7 @@ addForm.addEventListener("submit", (edata) => {
 
 
 // Form validation for Task Assigned Field min length 5
-if (assignedTo.value.length < 3) {
+if (assignedTo.value.length < 5) {
   assignErr.innerHTML = 'Task must be assigned';
     assignErr.style.color = 'red';
   } else {
@@ -58,19 +58,31 @@ if (assignedTo.value.length < 3) {
      valData++;
    }
    
-  // Form validation for Due Date Field not empty
+    // Form validation for Status Field not empty
    // console.log(dueDate.value)
-  if (dueDate.value === "yyyy/mm/dd") {
-    dateErr.innerHTML ="Enter a valid date";
-    dateErr.style.color = 'red';
+  if (statusD.value == "") {
+    statusErr.innerHTML ="Enter a valid status";
+    statusErr.style.color = 'red';
   } else {
-    dateErr.innerHTML ="all good";
-    dateErr.style.color = 'green';
+    statusErr.innerHTML ="all good";
+    statusErr.style.color = 'green';
     valData++;
   }
 
+  // Form validation for Due Date Field not empty
+   // console.log(dueDate.value)
+  if (dueDate.value == "") {
+    console.log(dueDate.value)
+    dateErr.innerHTML ="Enter a valid date";
+    dateErr.style.color = 'red';
+      } else {
+    dateErr.innerHTML ="all good";
+    dateErr.style.color = 'green';
+    valData++;
+  } 
+
 //  console.log(valData);
-// //   // ----------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------
   if (valData > 0) {
     valData = 0;
     console.log("validation successful");
@@ -106,31 +118,5 @@ taskManager.render();
 
 // console.log(myID.parentNode.parentNode.parentNode.parentNode.id);
 
-    // switch(stats) {
-    //   case 0: 
-    //   cardStats = 'To do';
-    //   break;
-    //   case 1:
-    //   cardStats = 'Being reviewed';
-    //   break;
-    //   case 2: 
-    //   cardStats = 'Still in progress';
-    //   break;
-    //   case 3: 
-    //   cardStats = 'done';
-    //   break;
-    //   default:
-    // } 
-    // if(cardStats.value === done.statusD.value) {
-    //   done.innerHTML = "done";
-    
-    // }
 }
 
-// var result = myCard(plum);
-//   const target = event.target;
-//   if(target.matches("click")) {
-//    target.innerText = "Done";
-//    target.background.color = "green"; 
-//   }
-//  let cardStats = done.value;

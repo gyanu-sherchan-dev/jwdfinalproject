@@ -56,7 +56,7 @@ if (assignedTo.value.length < 3) {
    }
 
   // Form validation for Task Status Field not empty
-  if (statusD.value === '' || statusD.value == null) {
+  if (statusD.value == '' || statusD.value == null) {
     statusErr.innerHTML = 'Please select status';
     statusErr.style.color = 'red';
   } else {
@@ -67,7 +67,7 @@ if (assignedTo.value.length < 3) {
 
   
   // Form validation for Due Date Field not empty
-   if (dueDate.value === "dd/mm/yyyy") {
+   if (dueDate.value == "dd/mm/yyyy") {
     dateErr.innerHTML ="Enter a valid date";
     dateErr.style.color = 'red';
   } else {

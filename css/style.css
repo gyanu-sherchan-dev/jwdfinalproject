@@ -1,7 +1,6 @@
 body{
     background-color: lightgray;
-}
-
+    }
 
 #form {
 background-color: lightblue;
@@ -9,7 +8,11 @@ border-radius: 30px;
 padding: 20px 30px;
 margin-top: 5%;
 margin-bottom: 5%;
-/* max-width: 500px; */
+display: flex;
+justify-content: center;
+align-items: center;
+/* position: absolute; */
+/* left: 180px;  */
 }
 
 p {
