@@ -2,7 +2,7 @@
 function createTaskHtml (currentId, names, description, assignedTo, statusD, dueDate) {
   console.log(currentId);
   const html =`<div class="col" id="${currentId}">
-  <div class="mx-auto card" style="width: 14rem;">
+  <div class="auto card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-name">Name:</h5>
       <p class="card-text">${names}</p>
@@ -15,7 +15,7 @@ function createTaskHtml (currentId, names, description, assignedTo, statusD, due
       <h5 class="card-name">DueDate:</h5>
       <p class="Date">${dueDate}</p>
       <a href="#" class="btn btn-success ${(statusD == "Done") ? "d-none" : ""}
-      " id="${currentId}">Mark as Done</a>
+      " id="${currentId}">Mark as Done</a><br>
       <a href="#" class="btn btn-primary">delete</a>
     </div>
   </div>
@@ -76,6 +76,8 @@ class TaskManager {
       const date = new Date(task.dueDate);
       const formattedDate =
         date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+
+    
       //Task html
       console.log("render function");
       const taskHtml = createTaskHtml(

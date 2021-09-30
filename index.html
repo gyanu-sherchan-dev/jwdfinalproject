@@ -11,14 +11,25 @@
 
     <link rel="stylesheet"  href="./css/style.css">
   </head>
-  <header><h1> AddTask Activities </h1></header>
+  
     <body>
-
-   <!----> 
-   <div class="container-fluid">
-<!---->
+     
+      <!-- Nav starts here -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" id="addTask">
+        <div class="container-fluid" style="background-color:green;">
+          <a class="navbar-brand" href="#" style="font-weight: bolder;  font-size: xx-large;">Add Task</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- Nav ends here -->
+    <!----> 
+   
+      <!---->
     <!--Form information starts here-->
-    <section class="d-flex">
+    <div class="container-fluid">
+    <section class="d-flex justify-content-center">
       <!-- <section class="d-flex flex-column mx-auto col-lg-4 col-md-8 col-sm-12"></section> -->
       <form name="Add Task" id="addForm">
         <span id="nameError"></span>
@@ -68,51 +79,18 @@
   <!--Form information ends here-->
 
         <!--Cards information-->
-    <section class="d-flex flex-wrap" id="task-list"> <!--justify-content-center-->
-                    
-    <!--First card starts here-->
-      <!-- <div class="row">
-        <div class="col">
-          <div class="mx-auto card" style="width: 14rem;">
-            <div class="card-body">
-              <h5 class="card-name">Name</h5>
-              <p class="card-text">Coding</p>
-              <h5 class="card-name">Description</h5>
-              <p class="card-text">Make use of course content.</p>
-              <h5 class="card-name">Assigned to:</h5>
-              <p class="card-text">Patience</p>
-              <h5 class="card-status">Status:</h5>
-              <p class="card-text">Done</p>
-              <h5 class="card-name">Due Date:</h5>
-              <p class="Date">yyyy/mm/dd</p>
-              <a href="#" class="btn btn-success" id="done">Mark as done</a>
-              <a href="#" class="btn btn-primary" id="delete">delete</a>
-            </div>
-           </div>
-          </div>
-      </div> -->
-          
-               <!--first card ends here-->
-        <!-- Task list -->
-      
-          <!-- <div class="row">
-            <div class="col"> -->
-              <!-- <div class="task-list-container"> -->
-                <!-- <h3 class="text-center">Tasks:</h3> -->
-                  <!-- <div class="d-flex justify-content-center"> -->
-                    <!-- <div id="task-list"></div> -->
-                  <!-- </div>
-              </div> -->
-            <!-- </div>
-          </div> -->
-      </section> 
-              <footer>Rights reserved. Copyright 2021 , by Gyanu & Patience</footer>
+    <section class= "d-flex" id="task-list"> 
+                   
+         </section> 
+
+
+    <footer>Rights reserved. Copyright 2021 , by Gyanu & Patience</footer>
           
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-  </div>
+  
   <script src="js/taskManager.js"></script>
   <script src="js/index.js"></script>
   </body>
