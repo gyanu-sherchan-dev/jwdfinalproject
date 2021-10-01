@@ -5,13 +5,9 @@ border-radius: 30px;
 padding: 20px 30px;
 margin-top: 5%;
 margin-bottom: 5%;
-display: flex;
-justify-content: center;
-align-items: center;
-}
 
 p {
-    color: red;
+    color: black;
 }
 
 .form-label {
@@ -23,12 +19,8 @@ p {
 }
 
 .card {
-    background-color: lightblue;
-    border-radius: 30px;
-    padding: 20px 30px;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    
+    background-color: lightgreen;
+   
 }
 
 footer {
