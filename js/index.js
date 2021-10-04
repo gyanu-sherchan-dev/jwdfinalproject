@@ -1,6 +1,9 @@
 // TaskManager initialises
 const taskManager = new TaskManager(0);
 // console.log(taskManager);
+// TaskManager loading and rendering
+taskManager.load();
+taskManager.render();
 
 const addForm = document.querySelector("#addForm");
 // console.log(addForm);
@@ -12,7 +15,9 @@ addForm.addEventListener("submit", (edata) => {
   let description = document.querySelector("#description");
   let assignedTo = document.querySelector("#assign");
   let statusD = document.querySelector("#inputState");
-  let dueDate = document.querySelector("#date");
+  let dueDate = document.querySelector("#dateNow");
+
+  // declaring error variables
   let nameError = document.querySelector("#nameError");
   let descripError = document.querySelector("#descripError");
   let assignErr = document.querySelector("#assignErr");
@@ -20,6 +25,7 @@ addForm.addEventListener("submit", (edata) => {
   let dateErr = document.querySelector("#dateErr");
   let valData = 0;
 
+  //Accepting form values 
   console.log("Name :" + names.value.length);
   console.log("Description :" + description.value.length);
   console.log("Assigned To :" + assignedTo.value.length);
@@ -58,7 +64,7 @@ if (assignedTo.value.length < 5) {
      valData++;
    }
    
-    // Form validation for Status Field not empty
+  // Form validation for Status Field not empty
    // console.log(dueDate.value)
   if (statusD.value == "") {
     statusErr.innerHTML ="Enter a valid status";
@@ -83,10 +89,12 @@ if (assignedTo.value.length < 5) {
 
 //  console.log(valData);
 // ----------------------------------------------------------------------------------
+// Setting restrictions for data entry and submission
   if (valData >= 5) {
       // valData = 0;
     console.log("validation successful");
-    // here add a new task
+
+    // Adding a new task
     taskManager.addTask(
       names.value,
       description.value,
@@ -103,28 +111,45 @@ if (assignedTo.value.length < 5) {
     assignErr.innerHTML = "";
     statusErr.innerHTML = "";
     dateErr.innerHTML = "";
-    
+    taskManager.save();
     taskManager.render(); 
        
           }
-      });
 
-
+//eventListener for the currentId click
 let cardStats = document.querySelector("#task-list");
-// let done = document.getElementById("done");
 cardStats.addEventListener("click", myCard);
 
 function myCard(event) {
 // console.log("my card function");
+//let myID = event.target.parentNode.parentNode.parentNode.parentNode;
 let myID = event.target.id;
+// console.log(myID.parentNode.parentNode.parentNode.parentNode.id);
 console.log("Testing myID", myID);
 const task = taskManager.getTaskById(myID);
 console.log(task);
 task.statusD = "Done";
+
+//Check the delete button on click
+if(event.target.classlist.contains("delete-button")) {
+// const parentTask = event.target.parentNode.parentNode.parentNode.parentNode;
+const parentTask = event.target.id;
+const parentId = Number(parentTask.dataset.myID);
+taskManager.deleteTask(parentId);
+taskManager.save();
+taskManager.render();
+}
+}
+
+taskManager.save();
 // Render the tasks
 taskManager.render();
 
-// console.log(myID.parentNode.parentNode.parentNode.parentNode.id);
+});
 
-}
+
+
+
+
+
 
