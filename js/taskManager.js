@@ -33,7 +33,7 @@ class TaskManager {
     this.tasks = [];
     this.currentId = currentId
       }
-  
+ 
 //addTask method
     addTask(names, description, assignedTo,statusD, dueDate) {
     
@@ -78,7 +78,25 @@ class TaskManager {
       const date = new Date(task.dueDate);
       const formattedDate =
         date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+      // function formattedDate(selectedDate) {
+      //         const date = new Date();
       
+      //         console.log("check formattedDate");
+      
+          // const date = new Date(task.dueDate); 
+      // let day = date.getDate();
+      // let month = date.getMonth() + 1; //January is 0!
+      // let yearNow = today.getFullYear();
+      // if (day < 10) {
+      //   day = '0' + day;
+      // }
+    
+      // if (month < 10) {
+      //   month = '0' + month;
+      // }
+
+      // selectedDate = yearNow + "/" + "/"
+
        //Task html
       console.log("render function");
       const taskHtml = createTaskHtml(
@@ -124,10 +142,10 @@ class TaskManager {
       this.tasks = JSON.parse(tasksJson);
     }
   
-    // Check, getting currentId string in localStorage, 
-    // converting currentId to Number and storing it
-    if (localStorage.getItem("currentId")) {
+    // Check and get the string currentId in localStorage, 
+        if (localStorage.getItem("currentId")) {
         const currentId = localStorage.getItem("currentId");
+        // converting currentId to Number and storing it
         this.currentId = Number(currentId);
     }
   }
@@ -138,13 +156,13 @@ class TaskManager {
   
     // Loop over the tasks and get the current task
     for (let i = 0; i < this.tasks.length; i++) {
-         const existingTasks = this.tasks[i];
-         console.log(existingTasks);
+         const task = this.tasks[i];
+         console.log(task);
   
       // Check if the task id is not the task id passed in as a parameter
       if (task.id !== taskId) {
         // Push the task to the newTasks array
-        newTasks.push(existingTasks);
+        newTasks.push(task);
       }
     }
   

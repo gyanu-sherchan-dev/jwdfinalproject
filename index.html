@@ -7,81 +7,117 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
-    <title>jwdfinalprojetc!</title>
+    <title>jwdfinalproject!</title>
 
     <link rel="stylesheet"  href="./css/style.css">
+
   </head>
   <!-- <header><h1> AddTask Activities </h1></header> -->
-    <body>
+  
+  <body>
 
-   <!----> 
    <!-- As a heading -->
-<nav class="navbar" style="background: yellow;">
-  <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1" >Task Activities</span>
-  </div>
-</nav>
+    <!-- <nav class="navbar" style="background: yellow;">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1" >Task Activities</span> -->
+    <nav class="navbar navbar-expand-lg" style="background: lightgoldenrodyellow;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" style="font-weight: bolder;">Home |</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="font-weight: bolder;">Project |</a>
+              </li>
+      </div>
+    </nav><br>
+    <!-- <p style="text-align: center;">_________________________________________________________________________________________________________________________________________________________________________</p><br> -->
+
    
-<!---->
+
     <!--Form information starts here-->
     <div class="container-fluid">
     <section class="d-flex justify-content-center">
-      <!-- <section class="d-flex flex-column mx-auto col-lg-4 col-md-8 col-sm-12"></section> -->
-      <form name="Add Task" id="addForm" style="background: lightgreen;">
-        <span id="nameError"></span>
-        <div class="col">    
-          <label for="name" class="form-label">Name:</label>
-          <input type="text" class="form-control" id="name">
-        </div><br>
+       <!-- <section class="d-flex flex-column mx-auto col-lg-4 col-md-8 col-sm-12"></section> -->
+        <form name="Add Task" id="addForm" style="background: lightgreen;">
+          <h3><br>
+            Add Task Form<br>
+            
+            __________________________________________
+          </h3>
+          <span id="nameError"></span>
+          <div class="col">    
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="name">
+          </div>
 
-        <span id="descripError"></span>
-        <div class="col">
-          <label for="description" class="form-label">Description:</label>
-          <textarea class="form-control" id="description" name="description" rows="3" cols="30"></textarea>
-        </div><br>
+        <!--description label starts here-->
+          <span id="descripError"></span>
+          <div class="col">
+            <label for="description" class="form-label">Description:</label>
+            <textarea class="form-control" id="description" name="description" rows="3" cols="30"></textarea>
+          </div>
 
+         <!--Assigned To label ends here-->
         <span id="assignErr"></span>
         <div class="col">
           <label for="assign" class="form-label">Assigned To:</label>
           <input type="text" class="form-control" id="assign">
-        </div><br>
+        </div>
+         <!--Assigned label ends here-->
 
+         <!--Status label starts here-->
         <span id="statusErr"></span>
-        <div class="col">
-          <label for="inputState" class="form-label">Status</label>
-          <select id="inputState" class="form-select">
-            <option value="">Select One …</option>
-            <option value="todo">To do</option>
-            <option value="review">Review</option>
-            <option value="inprogress">In progress</option>
-            <option value="done">Done</option>
-          </select>
-        </div>
+          <div class="col">
+            <label for="inputState" class="form-label">Status</label>
+            <select id="inputState" class="form-select">
+              <option value="">Select One …</option>
+              <option value="todo">To do</option>
+              <option value="review">Review</option>
+              <option value="inprogress">In progress</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+         <!--Status label starts here-->
 
+          <!--Date label starts here-->
         <span id="dateErr"></span>
-        <div class="col">
-          <label for="date" class="form-label">Due Date:</label>
-          <input type="date" class="form-control" id="dateNow" value="">
-        </div>
+          <div class="col">
+            <label for="date" class="form-label">Due Date:</label>
+            <input type="date" class="form-control" id="dateNow" value="">
+          </div>
+         <!--Date label ends here-->
 
+          <!--Delete and Reset button for the form starts here-->
         <div class="col">
           <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
           <button type="reset" class="btn btn-primary" id="resetBtn">Reset</button>
         </div>
+         <!--Delete and Reset button for the form ends here-->
 
         </form>
+      </div>
       </section>
     
   <!--Form information ends here-->
 
-        <!--Task list information-->
-    <section class="d-flex-task" id="task-list"> <!--justify-content-center-->
+        <!--Task list information starts here-->
+    <section class="d-flex-task" id="task-list"> 
       <!-- <section class="d-flex flex-wrap" id="task-list">  -->
         </section> 
+        <!--Task list information ends here-->
 
+          <!--Footer information starts here-->
+    <section class="d-flex-wrap justify-content-center" id="footer">
+      <footer class="footer"><small>Rights reserved. Copyright 2021 , by Gyanu & Patience</small></footer>
+    </section>  
+          <!--Footer information ends here-->
 
-    <footer class="footerN">Rights reserved. Copyright 2021 , by Gyanu & Patience</footer>
-          
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

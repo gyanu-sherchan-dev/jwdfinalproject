@@ -123,7 +123,8 @@ cardStats.addEventListener("click", myCard);
 function myCard(event) {
 // console.log("my card function");
 //let myID = event.target.parentNode.parentNode.parentNode.parentNode;
-let myID = event.target.id;
+// let myID = event.target.id;
+let myID = event.target.parentNode.parentNode.parentNode.parentNode.id;
 // console.log(myID.parentNode.parentNode.parentNode.parentNode.id);
 console.log("Testing myID", myID);
 const task = taskManager.getTaskById(myID);
@@ -131,13 +132,14 @@ console.log(task);
 task.statusD = "Done";
 
 //Check the delete button on click
-if(event.target.classlist.contains("delete-button")) {
-// const parentTask = event.target.parentNode.parentNode.parentNode.parentNode;
-const parentTask = event.target.id;
+if(event.target.classlist.contains("delete-button")){
+//const parentTask = event.target.id;
+const parentTask = event.target.parentNode.parentNode.parentNode.parentNode.id;
 const parentId = Number(parentTask.dataset.myID);
 taskManager.deleteTask(parentId);
 taskManager.save();
 taskManager.render();
+
 }
 }
 
