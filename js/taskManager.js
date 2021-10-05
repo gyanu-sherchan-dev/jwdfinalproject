@@ -1,6 +1,6 @@
 //Card function in html
 function createTaskHtml (currentId, names, description, assignedTo, statusD, dueDate) {
-  console.log(currentId);
+ // console.log(currentId);
   const html =`<div class="col" id="${currentId}">
   <div class="mx-auto card" style="width: 14rem;">
     <div class="card-body">
@@ -107,7 +107,7 @@ class TaskManager {
         task.statusD,
         formattedDate,
         );
-      console.log(taskHtml);
+      //console.log(taskHtml);
 
       // Push it to the tasksHtmlList array
       tasksHtmlList.push(taskHtml);
