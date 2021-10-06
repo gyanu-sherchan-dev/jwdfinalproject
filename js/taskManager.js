@@ -1,7 +1,7 @@
 //Card function in html
 function createTaskHtml (currentId, names, description, assignedTo, statusD, dueDate) {
  // console.log(currentId);
-  const html =`<div class="col" id="${currentId}">
+  const html =`<div class="col"  id="${currentId}">
   <div class="mx-auto card" style="width: 14rem;">
     <div class="card-body">
       <h5 class="card-name">Name:</h5>
@@ -15,9 +15,9 @@ function createTaskHtml (currentId, names, description, assignedTo, statusD, due
       <h5 class="card-name">DueDate:</h5>
       <p class="Date">${dueDate}</p>
       <a href="#" class="btn btn-success done-button ${(statusD == "Done") ? "d-none" : ""}
-      " id="${currentId}">Mark as Done</a>
-      <a href="#" class="btn btn-danger delete-button">delete</a>
-    </div>
+      ">Mark as Done</a>  
+      <a href="#" class="btn btn-danger" id="delete-button">Delete</a>
+      </div>
   </div>
 </div>`
 
@@ -76,27 +76,10 @@ class TaskManager {
         const task = this.tasks[i];
       // Format the date
       const date = new Date(task.dueDate);
+      // date.setDate(date.getDate()-1);
       const formattedDate =
         date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-      // function formattedDate(selectedDate) {
-      //         const date = new Date();
-      
-      //         console.log("check formattedDate");
-      
-          // const date = new Date(task.dueDate); 
-      // let day = date.getDate();
-      // let month = date.getMonth() + 1; //January is 0!
-      // let yearNow = today.getFullYear();
-      // if (day < 10) {
-      //   day = '0' + day;
-      // }
-    
-      // if (month < 10) {
-      //   month = '0' + month;
-      // }
-
-      // selectedDate = yearNow + "/" + "/"
-
+       
        //Task html
       console.log("render function");
       const taskHtml = createTaskHtml(
@@ -129,8 +112,10 @@ class TaskManager {
    localStorage.setItem("tasks", tasksJson);
   
     //Converting currentId to a string and storing to local storage;
+    // const currentId = String(this.currentId);
     const currentId = String(this.currentId);
-    localStorage.setItem("currentId", currentId );
+    localStorage.setItem("currentId", currentId);
+    
    }
   
   load() {
@@ -146,8 +131,8 @@ class TaskManager {
         if (localStorage.getItem("currentId")) {
         const currentId = localStorage.getItem("currentId");
         // converting currentId to Number and storing it
-        this.currentId = Number(currentId);
-    }
+       this.currentId = Number(currentId);
+            }
   }
   
   deleteTask(taskId) {
