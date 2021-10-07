@@ -150,7 +150,7 @@ if (event.target.classList.contains(".delete-button")) {
   taskManager.save();
 
   // Render tasks
-  taskManager.render();
+  taskManager.render()
 }
 }
 });
