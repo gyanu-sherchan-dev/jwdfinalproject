@@ -42,7 +42,6 @@ addForm.addEventListener("submit", (edata) => {
     valData++;
 }
 
-
   // Form validation for Task Description Field min length 5
   if (description.value.length < 5) {
     descripError.innerHTML='Description must be longer than 5 characters';
@@ -111,44 +110,53 @@ if (assignedTo.value.length < 5) {
     assignErr.innerHTML = "";
     statusErr.innerHTML = "";
     dateErr.innerHTML = "";
-    taskManager.save();
+    // taskManager.save();
     taskManager.render(); 
        
-          }
-
+    }
 //eventListener for the currentId click
 let cardStats = document.querySelector("#task-list");
 cardStats.addEventListener("click", myCard);
 
 function myCard(event) {
 console.log("my card function");
-//let myID = event.target.parentNode.parentNode.parentNode.parentNode;
- let myID = event.target.id;
-//let myID = event.target.parentNode.parentNode.parentNode.parentNode.id;
-console.log(myID);
-//console.log("Testing myID", myID);
-const task = taskManager.getTaskById(myID);
-console.log(task);
-task.statusD = "Done";
+if(event.target.classlist.contains(".done-button")) {
+ console.log(event.target.parentElement);
 
+const parentTask =
+      event.target.parentElement.parentElement.parentElement.parentElement;
+    //Turn taskId of the parent Task and into a number.
+    const taskId = Number(parentTask.dataset.taskId);
+    // Get the task from the TaskManager using the taskId
+    const task = taskManager.getTaskById(taskId);
+    // Update task status to 'DONE'
+    task.statusD = "Done";
+    // Render the tasks
+    taskManager.render();
+  }
 //Check the delete button on click
-// if(event.target.classlist.contains("delete-button")){
-// const parentTask = event.target.id;
-// console.log(parentTask);
-// // const parentTask = event.target.parentNode.parentNode.parentNode.parentNode.id;
-// const parentId = Number(parentTask.dataset.myID);
-// taskManager.deleteTask(parentId);
-// taskManager.save();
-// taskManager.render();
+if (event.target.classList.contains(".delete-button")) {
+  // Get the parent Task
+  const parentTask =
+    event.target.parentElement.parentElement.parentElement.parentElement;
 
-// }
+  // Get the taskId of the parent Task.
+  const taskId = Number(parentTask.dataset.taskId);
+
+  // Delete the task
+  taskManager.deleteTask(taskId);
+
+  // Save tasks to localStorage
+  taskManager.save();
+
+  // Render tasks
+  taskManager.render()
 }
-
-taskManager.save();
-// Render the tasks
-taskManager.render();
-
+}
 });
+
+
+  
 
 
 
