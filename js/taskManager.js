@@ -14,12 +14,15 @@ function createTaskHtml (currentId, names, description, assignedTo, statusD, due
       <p class="card-text">${statusD}</p>
       <h5 class="card-name">DueDate:</h5>
       <p class="Date">${dueDate}</p>
-      <a href="#" class="btn btn-success done-button ${(statusD == "Done") ? "d-none" : ""}
-      ">Mark as Done</a>  
-      <a href="#" class="btn btn-danger" id="delete-button">Delete</a>
+      <button class="btn btn-success done-button ${(statusD == "done") ? "invisible" : "visible"}
+      ">Mark as Done</button>
+      <button class="btn btn-danger" id="delete-button">Delete</button>
       </div>
   </div>
 </div>`
+
+
+
 
 return html;
 }
@@ -81,7 +84,7 @@ class TaskManager {
         date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
        
        //Task html
-      console.log("render function");
+      // console.log("render function");
       const taskHtml = createTaskHtml(
         task.id,
         task.names,
