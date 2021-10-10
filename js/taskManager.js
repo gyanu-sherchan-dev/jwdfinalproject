@@ -115,7 +115,6 @@ class TaskManager {
     localStorage.setItem("tasks", tasksJson);
 
     //Converting currentId to a string and storing to local storage;
-    // const currentId = String(this.currentId);
     const currentId = String(this.currentId);
     localStorage.setItem("currentId", currentId);
   }
