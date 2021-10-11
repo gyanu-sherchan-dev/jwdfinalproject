@@ -111,7 +111,7 @@ addForm.addEventListener("submit", (edata) => {
     assignErr.innerHTML = "";
     statusErr.innerHTML = "";
     dateErr.innerHTML = "";
-    // taskManager.save();
+    taskManager.save();
     taskManager.render();
   }
 });
@@ -125,6 +125,9 @@ cardStats.addEventListener("click", (event) => {
     const task = taskManager.getTaskById(taskId);
     // Update task status to 'DONE'
     task.statusD = "done";
+
+    taskManager.save();
+
     // Render the tasks
     taskManager.render();
   }
