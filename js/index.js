@@ -4,7 +4,7 @@ const taskManager = new TaskManager(0);
 // TaskManager loading and rendering
 taskManager.load();
 //eventListener for the currentId click
-let cardStats = document.querySelector("#task-list");
+let taskList = document.querySelector("#task-list");
 taskManager.render();
 
 const addForm = document.querySelector("#addForm");
@@ -108,13 +108,15 @@ addForm.addEventListener("submit", (edata) => {
   }
 });
 // //eventListener for the currentId click
-  cardStats.addEventListener("click", (event) => {
+  taskList.addEventListener("click", (event) => {
   if (event.target.getAttribute('class').includes("doneBtn")) {
     const taskId = event.target.parentElement.parentElement.parentElement.getAttribute('id');
    
     const task = taskManager.getTaskById(taskId);
     // Update task status to 'DONE'
     task.statusD = "done";
+    // Save the tasks
+    taskManager.save();
     // Render the tasks
     taskManager.render();
   }
