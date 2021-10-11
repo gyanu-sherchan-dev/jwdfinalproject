@@ -7,7 +7,7 @@ function createTaskHtml(
   statusD,
   dueDate
   ) {
-  // console.log(currentId);
+
   const html = `<div class="col"  id="${currentId}">
   <div class="mx-auto card" style="width: 14rem;">
     <div class="card-body">
@@ -115,7 +115,6 @@ class TaskManager {
     localStorage.setItem("tasks", tasksJson);
 
     //Converting currentId to a string and storing to local storage;
-    // const currentId = String(this.currentId);
     const currentId = String(this.currentId);
     localStorage.setItem("currentId", currentId);
   }
