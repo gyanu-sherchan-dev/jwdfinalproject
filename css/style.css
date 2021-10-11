@@ -13,6 +13,9 @@
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 5px;
+    border: black;
+    background-color: green;
+    
 }
 
 #submitBtn {
@@ -31,3 +34,6 @@ background-color: purple;
 font-weight: bolder;
 }
 
+h3 {
+    text-align: center;
+}

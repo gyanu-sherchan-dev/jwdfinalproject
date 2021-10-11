@@ -64,7 +64,6 @@ addForm.addEventListener("submit", (edata) => {
   }
 
   // Form validation for Status Field not empty
-  // console.log(dueDate.value)
   if (statusD.value == "") {
     statusErr.innerHTML = "Enter a valid status";
     statusErr.style.color = "red";
@@ -75,9 +74,7 @@ addForm.addEventListener("submit", (edata) => {
   }
 
   // Form validation for Due Date Field not empty
-  // console.log(dueDate.value)
-  if (dueDate.value == "") {
-    console.log(dueDate.value);
+   if (dueDate.value == "") {
     dateErr.innerHTML = "Enter a valid date";
     dateErr.style.color = "red";
   } else {
@@ -106,7 +103,7 @@ addForm.addEventListener("submit", (edata) => {
     assignErr.innerHTML = "";
     statusErr.innerHTML = "";
     dateErr.innerHTML = "";
-    // taskManager.save();
+    // taskManager.render();
     taskManager.render();
   }
 });

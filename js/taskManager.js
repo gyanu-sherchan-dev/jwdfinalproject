@@ -7,7 +7,7 @@ function createTaskHtml(
   statusD,
   dueDate
   ) {
-  // console.log(currentId);
+
   const html = `<div class="col"  id="${currentId}">
   <div class="mx-auto card" style="width: 14rem;">
     <div class="card-body">
