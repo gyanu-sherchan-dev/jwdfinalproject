@@ -1,7 +1,7 @@
 # jwdfinalproject
 Patience and Gyanu project JWD cohort6 2021
 
-**Web page**:gyanu2200.github.io/jwdfinalproject/
+**Web page**: gyanu2200.github.io/jwdfinalproject/ 
 **Repo**: https://github.com/Gyanu2200/jwdfinalproject.git
 
 **Our storyboards**: wireframe
