@@ -103,6 +103,7 @@ addForm.addEventListener("submit", (edata) => {
     assignErr.innerHTML = "";
     statusErr.innerHTML = "";
     dateErr.innerHTML = "";
+    taskManager.save();
     // taskManager.render();
     taskManager.render();
   }
