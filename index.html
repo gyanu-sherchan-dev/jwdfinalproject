@@ -12,32 +12,41 @@
     <link rel="stylesheet"  href="./css/style.css">
 
   </head>
-  <header><h1> AddTask Planner </h1></header>
-  
-  <body img src="https://unsplash.com/photos/mexeVPlTB6k">
-
-   <!-- As a heading -->
-      <nav class="navbar navbar-expand-lg" style="background: purple;">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" style="font-weight: bolder;">Home |</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" style="font-weight: bolder;">Project |</a>
-              </li>
-      </div>
-    </nav><br>
+    
+  <body>
+    <header>
+       <!-- <figure> -->
+      <img src="./images/planner.jpg" alt="planner" />
+      <!-- </figure> -->
+      <nav>
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Add Task</a>
+                </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+      </nav>
+  </header>
   
     <!--Form information starts here-->
-    <div class="container-fluid">
-    <section class="d-flex justify-content-center">
+    <!-- <section class="container addtaskstyle mt 5" id="addtaskform">
+      <h3>AddTask Form</h3>
+    <div class="container-fluid"> -->
+    <section class="container justify-content-center" id="addtaskform">
        <!-- <section class="d-flex flex-column mx-auto col-lg-4 col-md-8 col-sm-12"></section> -->
+       <div class="container-fluid">
         <form name="Add Task" id="addForm">
           <h3><br>
             AddTask Form<br>
@@ -101,8 +110,9 @@
   <!--Form information ends here-->
 
         <!--Task list information starts here-->
-    <section class="d-flex" id="task-list"> 
-      <!-- <section class="d-flex flex-wrap" id="task-list">  -->
+
+    <section class="d-flex flex-wrap" id="task-list">
+      
         </section> 
         <!--Task list information ends here.-->
 
